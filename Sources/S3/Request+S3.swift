@@ -6,7 +6,7 @@ extension Request {
         guard let config = application.s3.configuration else {
             fatalError("S3 is not configured, please use application.s3.configuration = ...")
         }
-        
-        return .init(config: config, eventLoop: eventLoop, httpClient: application.client.http)
+
+        return .init(config: config, eventLoop: eventLoop, httpClient: HTTPClient(eventLoopGroupProvider: HTTPClient.EventLoopGroupProvider.shared(application.eventLoopGroup)))
     }
 }
