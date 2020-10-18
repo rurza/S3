@@ -11,9 +11,6 @@ public protocol S3Client {
     /// Create a bucket
     func create(bucket: String, region: Region?) -> EventLoopFuture<Void>
     
-    /// Delete a bucket wherever it is
-//    func delete(bucket: String, on container: Container) -> EventLoopFuture<Void>
-    
     /// Delete a bucket
     func delete(bucket: String, region: Region?) -> EventLoopFuture<Void>
     
